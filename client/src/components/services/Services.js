@@ -4,8 +4,8 @@ import Service from './Service'
 class Services extends Component {
   state = { services: [] }
   componentDidMount() {
-    const { workerId } = this.props
-    axios.get(`/api/workers/${workerId}/services`)
+    const { id } = this.props.match.params
+    axios.get(`/api/workers/${id}/services`)
       .then( res => {
         this.setState({ services: res.data })
       })

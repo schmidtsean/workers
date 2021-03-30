@@ -33,7 +33,8 @@ class Worker extends Component{
             <CardContent extra>
               <div className="ui three buttons">
                 <Button basic color="green">
-                  <Link to={`/workers/${id}/services`}> 
+                  <Link to={`/workers/${id}/services`}
+                  > 
                   View Services
                    </Link>
                    </Button>

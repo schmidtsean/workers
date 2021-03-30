@@ -39,7 +39,7 @@ class Api::ServicesController < ApplicationController
     end
 
     def set_worker
-      @worker = Worker.find(params[:id])
+      @worker = Worker.find(params[:worker_id])
     end
 
     def set_service
