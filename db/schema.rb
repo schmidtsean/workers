@@ -25,13 +25,6 @@ ActiveRecord::Schema.define(version: 2021_03_30_035421) do
     t.index ["service_id"], name: "index_comments_on_service_id"
   end
 
-  create_table "handymen", force: :cascade do |t|
-    t.string "title"
-    t.string "specialty"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "services", force: :cascade do |t|
     t.string "title"
     t.string "body"
