@@ -42,7 +42,7 @@ class ServiceForm extends Component{
           value={title}
           onChange={this.handleChange}
           required
-          placeholder="Name"
+          placeholder="Service Name"
         />
         <Form.Field
           control={Input}
@@ -51,7 +51,7 @@ class ServiceForm extends Component{
           value={body}
           onChange={this.handleChange}
           required
-          placeholder="Body"
+          placeholder="Description"
         />
         <Form.Field control={Button} type="submit">Submit</Form.Field>
         </FormGroup>

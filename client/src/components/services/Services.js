@@ -1,6 +1,8 @@
 import { Component } from 'react';
 import axios from 'axios';
-import Service from './Service'
+import ServiceForm from './ServiceForm';
+import ServiceList from './ServiceList';
+import { Container, Divider, Icon, Header } from 'semantic-ui-react';
 class Services extends Component {
   state = { services: [] }
   componentDidMount() {
@@ -43,15 +45,30 @@ class Services extends Component {
       })
       .catch( err => console.log(err))
   }
-  render() {
+  render(){
     const { services } = this.state
-    return (
-      <>
-        { services.map( s => 
-          <Service key={s.id} {...s} updateService={this.updateService} deleteService={this.deleteService} />
-        )}
-      </>
-    )
-  }
+    return(
+      <Container textAlign="center">
+        <h1> Service List </h1>
+        <Divider horizontal>
+          <Header>
+            <Icon name='user circle' />
+            Add a new Service
+          </Header>
+        </Divider>
+        <ServiceForm addService={this.addService}/>
+        <Divider horizontal>
+          <Header>
+            <Icon name='group' />
+              Available Service
+          </Header>
+        </Divider>
+        <ServiceList
+          services={services}
+          deleteService={this.deleteService}
+          updateService={this.updateService}
+          />
+      </Container>
+    )}
 }
 export default Services;
