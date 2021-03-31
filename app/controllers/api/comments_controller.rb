@@ -35,7 +35,7 @@ class Api::CommentsController < ApplicationController
 
   private
     def comment_params
-      params.require(:comment).permit(:title, :body)
+      params.require(:comment).permit(:title, :body, :rating)
     end
 
     def set_service

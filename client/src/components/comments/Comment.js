@@ -1,7 +1,7 @@
 import { Component } from 'react';
 import CommentForm from './CommentForm';
 import {Button, Card, CardContent, Image, Header, Modal, Icon } from 'semantic-ui-react';
-import Comments from './Comments';
+
 import PencilPic from '../images/pencil.png';
 
 class Comment extends Component{
@@ -14,7 +14,7 @@ class Comment extends Component{
 
   render(){
     const { editing } = this.state
-    const { id, title, body, deleteComment } = this.props
+    const { id, title, body, rating, deleteComment } = this.props
     return(
       <>
         {
@@ -29,6 +29,7 @@ class Comment extends Component{
               <Image floated="right" size="mini" src={PencilPic} />
               <Card.Header>{title}</Card.Header>
               <Card.Meta>{body}</Card.Meta>
+              <Card.Description>Rating: {rating} Stars</Card.Description>
             </CardContent>
             
             <CardContent extra>
