@@ -1,6 +1,6 @@
 import { Route, Switch } from 'react-router-dom';
 import Workers from './components/workers/Workers';
-
+import Worker from './components/workers/Worker';
 import Services from './components/services/Services';
 import Home from './components/shared/Home';
 import Navbar from './components/shared/Navbar';

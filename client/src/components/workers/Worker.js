@@ -3,7 +3,7 @@ import WorkerForm from './WorkerForm';
 import {Button, Card, CardContent, Image, Header, Modal, Icon } from 'semantic-ui-react';
 import {Link} from 'react-router-dom';
 import Elliot from '../images/elliot.jpg';
-
+import Services from '../services/Services';
 class Worker extends Component{
   state = { editing: false }
   
@@ -17,6 +17,7 @@ class Worker extends Component{
     const { id, title, specialty, deleteWorker } = this.props
     return(
       <>
+        
         {
           editing? 
             <WorkerForm 
@@ -30,6 +31,7 @@ class Worker extends Component{
               <Card.Header>{title}</Card.Header>
               <Card.Meta>{specialty}</Card.Meta>
             </CardContent>
+            
             <CardContent extra>
               <div className="ui three buttons">
                 <Button basic color="green">
@@ -38,6 +40,7 @@ class Worker extends Component{
                   View Services
                    </Link>
                    </Button>
+                   
                 <Button basic color="green" onClick={()=> this.toggleForm()}> Edit </Button>
                 <Modal
                   basic
@@ -51,10 +54,13 @@ class Worker extends Component{
                     </Button>
                   </Modal.Actions>
                 </Modal>
+                
               </div>
             </CardContent>
           </Card>
+          
           }
+          
       </>
     )
   }

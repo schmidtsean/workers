@@ -3,8 +3,9 @@ import axios from 'axios';
 import Service from './Service'
 class Services extends Component {
   state = { services: [] }
+ 
   componentDidMount() {
-    const { id } = this.props.match.params
+    const { id } = this.props
     axios.get(`/api/workers/${id}/services`)
       .then( res => {
         this.setState({ services: res.data })
@@ -33,10 +34,10 @@ class Services extends Component {
     const { services } = this.state
     return (
       <>
-      <h1>Services Page, you will probably have to redo all of this but it links to the page properly</h1>
-        { services.map( p => 
-          <Service key={p.id} {...p} deletePost={this.deleteService} />
+        { services.map( s => 
+          <Service key={s.id} {...s} deleteService={this.deleteService} />
         )}
+        
       </>
     )
   }

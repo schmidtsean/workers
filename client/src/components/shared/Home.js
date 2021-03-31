@@ -1,4 +1,4 @@
-import HomeTitle, { HomeBody } from '../styles/homeStyles';
+import HomeTitle, { HomeBody } from '../homeStyles.js/homeStyles';
 import {Link} from 'react-router-dom';
 import {Button} from 'semantic-ui-react';
 const Home = () => {
