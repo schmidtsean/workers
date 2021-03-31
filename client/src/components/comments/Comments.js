@@ -3,11 +3,12 @@ import axios from 'axios';
 import CommentForm from './CommentForm';
 import CommentList from './CommentList';
 import { Container, Divider, Icon, Header } from 'semantic-ui-react';
+import { withRouter } from 'react-router-dom';
 class Comments extends Component {
   state = { comments: [] }
   
   componentDidMount() {
-    const { id } = this.props
+    const { id } = this.props.match.params
     axios.get(`/api/services/${id}/comments`)
       .then( res => {
         this.setState({ comments: res.data })
@@ -72,4 +73,4 @@ class Comments extends Component {
       </Container>
     )}
 }
-export default Comments;
+export default withRouter(Comments);

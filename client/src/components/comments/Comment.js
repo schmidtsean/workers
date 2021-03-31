@@ -17,7 +17,6 @@ class Comment extends Component{
     const { id, title, body, deleteComment } = this.props
     return(
       <>
-        <Comments />
         {
           editing? 
             <CommentForm 
