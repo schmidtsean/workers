@@ -37,7 +37,7 @@ class Service extends Component{
                 <Button basic color="green">
                   <Link to={`/services/${id}/comments`}
                   > 
-                  View Comments
+                  View 
                    </Link>
                    </Button>
                    
