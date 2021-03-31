@@ -1,6 +1,3 @@
-import Services from '../services/Services';
-
-
 const Service = ({ title, body, id, deleteService }) => {
   return (
     <>
@@ -10,7 +7,6 @@ const Service = ({ title, body, id, deleteService }) => {
       <button onClick={() => deleteService(id)}>
         Delete
       </button>
-      
     </>
   )
 }

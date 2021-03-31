@@ -3,9 +3,8 @@ import axios from 'axios';
 import Service from './Service'
 class Services extends Component {
   state = { services: [] }
- 
   componentDidMount() {
-    const { id } = this.props
+    const { id } = this.props.match.params
     axios.get(`/api/workers/${id}/services`)
       .then( res => {
         this.setState({ services: res.data })
@@ -37,7 +36,6 @@ class Services extends Component {
         { services.map( s => 
           <Service key={s.id} {...s} deleteService={this.deleteService} />
         )}
-        
       </>
     )
   }
