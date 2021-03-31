@@ -52,15 +52,15 @@ class Services extends Component {
         <h1> Service List </h1>
         <Divider horizontal>
           <Header>
-            <Icon name='user circle' />
+            <Icon name='clipboard check' />
             Add a new Service
           </Header>
         </Divider>
         <ServiceForm addService={this.addService}/>
         <Divider horizontal>
           <Header>
-            <Icon name='group' />
-              Available Service
+            <Icon name='dolly' />
+              Available Services
           </Header>
         </Divider>
         <ServiceList
