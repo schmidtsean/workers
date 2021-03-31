@@ -2,7 +2,7 @@ import { Component } from 'react';
 import ServiceForm from './ServiceForm';
 import {Button, Card, CardContent, Image, Header, Modal, Icon } from 'semantic-ui-react';
 import {Link} from 'react-router-dom';
-import Elliot from '../images/elliot.jpg';
+import ServicePic from '../images/service.jpg';
 
 class Service extends Component{
   state = { editing: false }
@@ -27,7 +27,7 @@ class Service extends Component{
           :
           <Card>
             <CardContent>
-              <Image floated="right" size="mini" src={Elliot} />
+              <Image floated="right" size="mini" src={ServicePic} />
               <Card.Header>{title}</Card.Header>
               <Card.Meta>{body}</Card.Meta>
             </CardContent>
