@@ -3,7 +3,7 @@ import WorkerForm from './WorkerForm';
 import {Button, Card, CardContent, Image, Header, Modal, Icon } from 'semantic-ui-react';
 import {Link} from 'react-router-dom';
 import Elliot from '../images/elliot.jpg';
-import Services from '../services/Services';
+
 class Worker extends Component{
   state = { editing: false }
   
