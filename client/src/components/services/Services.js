@@ -12,20 +12,20 @@ class Services extends Component {
       .catch( err => console.log(err))
   }
   addService = (service) => {
-    const { workerId } = this.props
-    axios.post(`/api/workers/${workerId}/services`, { service })
+    const { id } = this.props.match.params
+    axios.post(`/api/workers/${id}/services`, { service })
       .then( res => {
         const { services } = this.state 
         this.setState({ services: [...services, res.data ]})
       })
       .catch( err => console.log(err))
   }
-  deleteService = (id) => {
-    const { workerId } = this.props
-    axios.delete(`/api/workers/${workerId}/services/${id}`)
+  deleteService = (serviceId) => {
+    const { id } = this.props.match.params
+    axios.delete(`/api/workers/${id}/services/${serviceId}`)
       .then( res => {
         const { services } = this.state 
-        this.setState({ services: services.filter( s => s.id !== id )})
+        this.setState({ services: services.filter( s => s.id !== serviceId )})
       })
       .catch( err => console.log(err))
   }
