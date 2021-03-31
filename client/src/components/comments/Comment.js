@@ -1,10 +1,10 @@
 import { Component } from 'react';
-import ServiceForm from './ServiceForm';
+import CommentForm from './CommentForm';
 import {Button, Card, CardContent, Image, Header, Modal, Icon } from 'semantic-ui-react';
-import {Link} from 'react-router-dom';
-import ServicePic from '../images/service.jpg';
+import Comments from './Comments';
+import PencilPic from '../images/pencil.png';
 
-class Service extends Component{
+class Comment extends Component{
   state = { editing: false }
   
   toggleForm = () => {
@@ -14,38 +14,35 @@ class Service extends Component{
 
   render(){
     const { editing } = this.state
-    const { id, title, body, deleteService } = this.props
+    const { id, title, body, deleteComment } = this.props
     return(
       <>
-        
+        <Comments />
         {
           editing? 
-            <ServiceForm 
+            <CommentForm 
               {...this.props}
               toggleForm={this.toggleForm}
             />
           :
           <Card>
             <CardContent>
-              <Image floated="right" size="mini" src={ServicePic} />
+              <Image floated="right" size="mini" src={PencilPic} />
               <Card.Header>{title}</Card.Header>
               <Card.Meta>{body}</Card.Meta>
             </CardContent>
             
             <CardContent extra>
-              <div className="ui three buttons">
-                <Button basic color="green">
-                  <Link to={`/services/${id}/comments`}> 
-                    View 
-                  </Link>
-                </Button>
+              <div className="ui two buttons">
+                
+                   
                 <Button basic color="green" onClick={()=> this.toggleForm()}> Edit </Button>
                 <Modal
                   basic
                   size='small'
-                  trigger={<Button basic color="red" onClick={()=> deleteService(id)}> Delete </Button>}
+                  trigger={<Button basic color="red" onClick={()=> deleteComment(id)}> Delete </Button>}
                 >
-                  <Header> Service Deleted!</Header>
+                  <Header> Comment Deleted!</Header>
                   <Modal.Actions>
                     <Button color='green' inverted>
                       <Icon name="checkmark" /> Ok
@@ -63,4 +60,4 @@ class Service extends Component{
     )
   }
 }
-export default Service;
+export default Comment;

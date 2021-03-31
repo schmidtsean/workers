@@ -48,6 +48,7 @@ class Services extends Component {
   render(){
     const { services } = this.state
     return(
+      
       <Container textAlign="center">
         <h1> Service List </h1>
         <Divider horizontal>
@@ -70,5 +71,6 @@ class Services extends Component {
           />
       </Container>
     )}
+    
 }
 export default Services;

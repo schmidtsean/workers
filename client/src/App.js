@@ -1,6 +1,6 @@
 import { Route, Switch } from 'react-router-dom';
 import Workers from './components/workers/Workers';
-import Worker from './components/workers/Worker';
+import Comments from './components/comments/Comment';
 import Services from './components/services/Services';
 import Home from './components/shared/Home';
 import Navbar from './components/shared/Navbar';
@@ -17,6 +17,7 @@ const App = () => (
         <Route exact path="/" component={Home} />
         <Route exact path="/workers" component={Workers} />
         <Route exact path="/workers/:id/services" component={Services} />
+        <Route exact path="/services/:id/comments" component={Comments} />
         <Route component= {NoMatch} />
       </Switch>
     </Container>
