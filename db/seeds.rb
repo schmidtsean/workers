@@ -1,4 +1,5 @@
 stars = [ '1', '2', '3', '4', '5']
+
 5.times do
   worker = Worker.create(
     title: Faker::DcComics.villain,
