@@ -5,7 +5,7 @@ import { Grid } from 'semantic-ui-react';
 const CommentList = ({ comments, deleteComment, updateComment}) => {
   return(
     <>
-        <Grid columns="2">
+        <Grid columns="1">
       { comments.map(c =>
        
           <Grid.Column>
